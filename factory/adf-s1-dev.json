@@ -5,6 +5,10 @@
 			"container": {
 				"type": "string",
 				"value": "adlsgen2s1dev"
+			},
+			"filepath": {
+				"type": "string",
+				"value": "target"
 			}
 		}
 	},
