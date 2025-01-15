@@ -1,0 +1,37 @@
+{
+	"name": "ds_target_copy_globalparameter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStoragegen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Targetcontainer": {
+				"type": "string"
+			},
+			"Filepath": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().Filepath",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().Targetcontainer",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
