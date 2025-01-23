@@ -1,0 +1,32 @@
+{
+	"name": "ds_target_files_AppendVariable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStoragegen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": "target",
+				"fileSystem": "adlsgen2s1dev"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
