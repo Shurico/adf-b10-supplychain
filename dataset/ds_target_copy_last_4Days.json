@@ -1,0 +1,23 @@
+{
+	"name": "ds_target_copy_last_4Days",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStoragegen2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Target/lst4Days",
+				"fileSystem": "adlsgen2container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
