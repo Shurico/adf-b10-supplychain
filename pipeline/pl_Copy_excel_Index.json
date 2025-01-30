@@ -57,26 +57,14 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ds_source_copy_excel_index",
-									"type": "DatasetReference",
-									"parameters": {
-										"IndexSheetname": {
-											"value": "@item()",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "ds_source_excel_sheets_copy",
+									"type": "DatasetReference"
 								}
 							],
 							"outputs": [
 								{
-									"referenceName": "ds_target_copy_excel_Index",
-									"type": "DatasetReference",
-									"parameters": {
-										"Targetsheetname": {
-											"value": "@item()",
-											"type": "Expression"
-										}
-									}
+									"referenceName": "ds_target_copy_Excelsheets",
+									"type": "DatasetReference"
 								}
 							]
 						}
