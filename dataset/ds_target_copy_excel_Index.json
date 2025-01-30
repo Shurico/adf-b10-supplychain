@@ -1,0 +1,32 @@
+{
+	"name": "ds_target_copy_excel_Index",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStoragegen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Targetsheetname": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().Targetsheetname",
+					"type": "Expression"
+				},
+				"folderPath": "target/indexexcel",
+				"fileSystem": "adlsgen2container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

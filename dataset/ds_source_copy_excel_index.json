@@ -1,0 +1,29 @@
+{
+	"name": "ds_source_copy_excel_index",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_AzureDataLakeStoragegen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"IndexSheetname": {
+				"type": "int"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "inputExcelfile.xlsx",
+				"folderPath": "Source",
+				"fileSystem": "adlsgen2container"
+			},
+			"sheetIndex": {
+				"value": "@dataset().IndexSheetname",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
