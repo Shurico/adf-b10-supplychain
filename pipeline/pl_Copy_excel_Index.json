@@ -58,13 +58,25 @@
 							"inputs": [
 								{
 									"referenceName": "ds_source_excel_sheets_copy",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"SheetName": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "ds_target_copy_Excelsheets",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"Targetsheetname": {
+											"value": "@item()",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
