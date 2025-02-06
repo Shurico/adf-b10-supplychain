@@ -672,7 +672,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_source_sql_for_lookup')]",
+			"name": "[concat(parameters('factoryName'), '/ds_source_lookup_sql_for_until')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -682,10 +682,19 @@
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [],
+				"schema": [
+					{
+						"name": "tableName",
+						"type": "varchar"
+					},
+					{
+						"name": "refreshed",
+						"type": "varchar"
+					}
+				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "employees"
+					"table": "mastertable"
 				}
 			},
 			"dependsOn": [
