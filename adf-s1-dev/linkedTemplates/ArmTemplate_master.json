@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_AzureDataLakeStoragegen2'"
 		},
+		"ls_Target_Database_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_Target_Database'"
+		},
 		"ls_source_sql_server_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_source_sql_server'"
@@ -48,6 +52,9 @@
 					},
 					"ls_AzureDataLakeStoragegen2_accountKey": {
 						"value": "[parameters('ls_AzureDataLakeStoragegen2_accountKey')]"
+					},
+					"ls_Target_Database_connectionString": {
+						"value": "[parameters('ls_Target_Database_connectionString')]"
 					},
 					"ls_source_sql_server_connectionString": {
 						"value": "[parameters('ls_source_sql_server_connectionString')]"
@@ -97,6 +104,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'adf-s1-dev_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "adf-s1-dev_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-s1-dev_ArmTemplate_2')]"
 			]
 		}
 	]
