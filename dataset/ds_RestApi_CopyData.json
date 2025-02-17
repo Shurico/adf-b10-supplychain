@@ -1,0 +1,23 @@
+{
+	"name": "ds_RestApi_CopyData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_Rest_API",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Sourcepagenumberparameter": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().Sourcepagenumberparameter",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
