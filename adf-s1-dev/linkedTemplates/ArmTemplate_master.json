@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsgen2s1dev.dfs.core.windows.net"
 		},
+		"ls_Rest_API_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://reqres.in/api/users"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +65,9 @@
 					},
 					"ls_AzureDataLakeStoragegen2_properties_typeProperties_url": {
 						"value": "[parameters('ls_AzureDataLakeStoragegen2_properties_typeProperties_url')]"
+					},
+					"ls_Rest_API_properties_typeProperties_url": {
+						"value": "[parameters('ls_Rest_API_properties_typeProperties_url')]"
 					}
 				}
 			},

@@ -16,6 +16,9 @@
 		},
 		"ls_AzureDataLakeStoragegen2_properties_typeProperties_url": {
 			"value": "https://adlsgen2s1dev.dfs.core.windows.net"
+		},
+		"ls_Rest_API_properties_typeProperties_url": {
+			"value": "https://reqres.in/api/users"
 		}
 	}
 }
