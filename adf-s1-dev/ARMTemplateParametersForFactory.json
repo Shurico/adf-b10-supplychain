@@ -19,6 +19,12 @@
 		},
 		"ls_Rest_API_properties_typeProperties_url": {
 			"value": "https://reqres.in/api/users"
+		},
+		"TumblingWindowTrigger_properties_pipeline_parameters_Startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TumblingWindowTrigger_properties_pipeline_parameters_Enddate": {
+			"value": "@trigger().outputs.windowEndTime"
 		}
 	}
 }
