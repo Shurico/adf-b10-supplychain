@@ -1,0 +1,16 @@
+{
+	"name": "ds_Target_copy_TumblingWIndow",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_sql_server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales_tumbling"
+		}
+	}
+}
